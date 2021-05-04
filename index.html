@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <title>Polar</title>
+</head>
+<body>
+<div style="text-align:center;">
+    <div style="color:#707070">
+        <h1>Principales problemas de las MiPyMES</h1>
+    </div>
+</div>
+    <div>
+        <canvas id="myChart"></canvas>
+    </div>
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    
+    // The type of chart we want to create
+    type: 'polarArea',
+    // The data for our dataset
+    data: {
+        labels: [
+            'Altos puestos',
+            'Exceso de Burocracia',
+            'Altos gastos',
+            'Inseguridad',
+            'Altos costos de insumos',
+            'Competencia desleal',
+        ],
+        datasets: [{
+            label: "Principales Problemas de las MiPyMES",
+            borderColor: ['rgb(68, 160, 277, 1)','rgb(60, 133, 125, 1)','rgb(0, 119, 171,1)','rgb(237, 119, 92,1)','rgb(150,177,172,1)','rgb(213,244,255,1)'],
+            backgroundColor: ['rgb(68, 160, 277,.5)','rgb(60, 133, 125,.5)','rgb(0, 119, 171,.5)','rgb(237, 119, 92,.5)','rgb(150,177,172,.5)','rgb(213,244,255,.5)'],
+            borderWidth: 0,
+            hoverBackgroundColor: "rgb(218,232,230,1)",
+            hoverBorderColor: "rgb(237, 119, 92,1)",
+            hoverBorderWidth: 2,
+            data: [28.3, 18.3, 28.9, 43.4, 18.1, 17.8],
+        }]
+    },
+ 
+    // Configuration options go here
+    options: {
+        startAngle: 1,
+        animation: {
+            animateRotate: false,
+            animateScale: false,
+        }
+    }
+});
+</script>
+    
+<script>
+    // === include 'setup' then 'config' above ===
+  
+    var myChart = new Chart(
+      document.getElementById('myChart')
+    );
+  </script>
+
+      <!-- D3 --> 
+<script src="https://d3js.org/d3.v6.min.js"></script>
+
+<!-- JS -->
+<script src="/js/main.js"></script>
+
+<!-- JQuery first, then Popper.js, then Bootstrap JS -->
+<script src="bootstrap-4.4.1-dist/js/jquery-3.4.1.slim.min.js"></script>
+<script src="bootstrap-4.4.1-dist/js/popper.min.js"></script>
+<script src="bootstrap-4.4.1-dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
+    
+</body>
+</html>
